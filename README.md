@@ -99,7 +99,7 @@ require("declutter").setup({
 To override colors use the configuration options of your terminal app. To override highlight groups refer to `highlights` in [theme](lua/neology/theme.lua). Use the `highlighs` option passed to setup() function (above) to override color and style values. 
 
 
-## 🍭 Extras
+## Extras
 
 Extra color configs for **iTerm** [extras](extras/).
 
