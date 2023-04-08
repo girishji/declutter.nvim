@@ -101,5 +101,5 @@ To override colors use the configuration options of your terminal app. To overri
 
 ## Extras
 
-Extra color configs for **iTerm** [extras](extras/).
+Extra color configs for **iTerm** in [extras](extras/).
 
