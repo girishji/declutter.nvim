@@ -2,7 +2,7 @@
 
 Removing all the color clutter and retaining only the essential.
 
-All colors are configured through Terminal app. Nothing is hardcoded. Modern terminals allow [16 ansi colors](https://jeffkreeftmeijer.com/vim-16-color/) to be set to whatever hex values you choose. This theme inherits colors from terminal, so you can configure the look on the fly. You will also get consistent look across shell commands.
+All colors are configured through Terminal app. Nothing is hardcoded. Modern terminals allow [16 ansi colors](https://jeffkreeftmeijer.com/vim-16-color/) to be set to whatever 24-bit hex values you choose. This theme inherits colors from terminal, so you can configure the look on the fly by directly adjusting colors in your terminal app. You will also get consistent look across shell commands.
 
 ## Screenshot
 
