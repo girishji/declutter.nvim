@@ -41,11 +41,7 @@ function M.setup(opts)
     -- Normal = for Normal mindowns, NormalNC = for non current windows
     Cursor                   = { ctermbg = c.primary },
     CursorLine               = { ctermbg = c.bg_muted_2, cterm = {} },
-    MatchParen               = { ctermbg = c.bg_red },
-    Pmenu                    = { ctermbg = c.bg_muted_1, ctermfg = 'NONE' },
-    PmenuSel                 = { link = 'Visual' },
-    PmenuSBar                = { link = 'Visual' },        -- scrollbar
-    PmenuThumb               = { ctermbg = c.fg_muted_1 }, -- thumb of scrollbar
+    MatchParen               = { ctermbg = c.bg_blue },
     ColorColumn              = { ctermbg = c.bg_muted_1 },
     SpellBad                 = { ctermbg = c.bg_red },
     SpellCap                 = { ctermbg = c.bg_green },
@@ -56,20 +52,15 @@ function M.setup(opts)
     CursorLineNr             = { ctermbg = c.bg_muted_2, cterm = {} },
     Visual                   = { ctermbg = c.bg_primary },
     IncSearch                = { ctermfg = c.primary, cterm = { reverse = true } },
-    Search                   = { ctermfg = c.primary, ctermbg = c.bg_muted_1 },
+    Search                   = { ctermfg = c.primary, ctermbg = c.fg_muted_1 },
     StatusLine               = { ctermbg = c.bg_muted_1 },
     StatusLineNC             = { ctermbg = 'NONE' },
-    VertSplit                = { ctermfg = c.bg_muted_1, ctermbg = c.bg_muted_1 },
     TabLine                  = { ctermbg = c.bg_muted_1 },
     TabLineSel               = { ctermbg = c.bg_muted_2 },
     Folded                   = { ctermfg = c.primary, cterm = { bold = true } },
     Conceal                  = { ctermfg = c.primary },
     Directory                = { ctermfg = c.bg_blue },
     Title                    = { ctermfg = c.primary, cterm = { bold = true } },
-    DiffAdd                  = { ctermbg = c.bg_green },
-    DiffChange               = { ctermbg = c.bg_yellow },
-    DiffDelete               = { ctermbg = c.bg_red },
-    DiffText                 = { ctermbg = c.green, cterm = { bold = true } },
     ErrorMsg                 = { link = 'DiffDelete' }, -- error messages on the command line
     WarningMsg               = { link = 'DiffChange' },
     MoreMsg                  = { link = 'Title' },      -- 'show more' prompt
@@ -81,18 +72,30 @@ function M.setup(opts)
     Question                 = { link = 'MoreMsg' },
     TabLineFill              = { link = 'StatusLineNC' },
     SpecialKey               = { link = 'NonText' },
+    --
+    -- nvim -d (vimdiff)
+    DiffAdd                  = { ctermbg = c.bg_green },
+    DiffChange               = { ctermbg = c.bg_yellow },
+    DiffDelete               = { ctermbg = c.bg_red },
+    DiffText                 = { ctermbg = c.bg_primary },
+    --
     -- Floating Windows
     FloatBorder              = { ctermfg = c.fg_muted_1, ctermbg = c.bg_muted_1 },
-    FloatTitle               = { cterm = { bold = true } },
-    -- NormalSB            = { fg = c.fg_sidebar, bg = c.bg_sidebar }, -- normal text in sidebar
-    -- NormalFloat         = { fg = c.loat, bg = c.bg_float }, -- Normal text in floating windows.
+    NormalFloat              = { ctermfg = 'NONE', ctermbg = c.bg_muted_1 }, -- Normal text in floating windows.
+    -- FloatTitle               = { cterm = { bold = true } },
+    -- NormalSB            = { ctermfg = c.fg_sidebar, ctermbg = c.bg_sidebar }, -- normal text in sidebar
     --
-
+    WinSeparator             = { link = 'FloatBorder' },
+    --
+    Pmenu                    = { link = 'NormalFloat' },
+    PmenuSel                 = { link = 'Visual' },
+    PmenuSBar                = { link = 'Visual' },        -- scrollbar
+    PmenuThumb               = { ctermbg = c.fg_muted_1 }, -- thumb of scrollbar
     --
     -- Generic syntax
     -- https://vimdoc.sourceforge.net/htmldoc/syntax.html
     --    *Comment	any comment
-    Comment                  = { ctermfg = c.fg_muted_2 },
+    Comment                  = { ctermfg = c.fg_muted_2, cterm = { italic = true } },
     --
     -- *Constant	any constant
     --  String		a string constant: "this is a string"
@@ -115,7 +118,12 @@ function M.setup(opts)
     --  Keyword	any other keyword (class, return, etc.)
     --  Exception	try, catch, throw
     Statement                = { ctermfg = 'NONE' },
-    Keyword                  = { ctermfg = 'NONE', cterm = { bold = true } },
+    -- Keyword                  = { ctermfg = 'NONE', cterm = { bold = true } },
+    -- Exception                = { link = 'Keyword' },
+    -- Conditional              = { link = 'Keyword' },
+    -- Repeat                   = { link = 'Keyword' },
+    -- Label                    = { link = 'Keyword' },
+    Operator                 = { link = 'Delimiter' },
     --
     -- *PreProc	generic Preprocessor
     --  Include	preprocessor #include
@@ -141,7 +149,6 @@ function M.setup(opts)
     --  Debug		debugging statements
     Special                  = { ctermfg = 'NONE' },
     Delimiter                = { ctermfg = c.bg_secondary, cterm = {} }, -- operator symbols
-    Operator                 = { link = 'Delimiter' },
     --
     -- *Underlined	text that stands out, HTML links
     Underlined               = { ctermfg = c.fg_muted_1, cterm = { underline = true } },
@@ -157,7 +164,7 @@ function M.setup(opts)
     --
 
     -- Set specific Treesitter node tags
-    ["@type.qualifier"]      = { link = 'PrePro' },
+    -- ["@type.qualifier"]      = { link = 'PreProc' },
     ["@text.danger"]         = { fg = c.fg_yellow, underline = true },
     --
 
@@ -191,10 +198,26 @@ function M.setup(opts)
     IndentBlanklineIndent6   = { link = 'IndentBlanklineIndent1' },
     --
 
-    -- telescope
+    -- Telescope
+    TelescopeNormal          = { link = 'NormalFloat' },
+    TelescopeBorder          = { link = 'FloatBorder' },
     TelescopeSelection       = { link = 'Visual' },
     TelescopeMatching        = { ctermfg = c.primary },
     --
+    -- git
+    GitSignsAdd              = { ctermbg = 'NONE', ctermfg = c.green },
+    GitSignsChange           = { ctermbg = 'NONE', ctermfg = c.yellow },
+    GitSignsDelete           = { ctermbg = 'NONE', ctermfg = c.red },
+    -- Statusline
+    User1                    = { ctermbg = c.bg_muted_1, ctermfg = 'NONE' },
+    User2                    = { ctermbg = c.bg_muted_1, ctermfg = c.primary },
+    User3                    = { ctermbg = c.bg_muted_1, ctermfg = c.secondary },
+    User4                    = { ctermbg = c.bg_muted_1, ctermfg = c.fg_muted_1 },
+    User5                    = { ctermbg = c.bg_muted_1, ctermfg = c.red },
+    User6                    = { ctermbg = c.bg_muted_1, ctermfg = c.green },
+    User7                    = { ctermbg = c.bg_muted_1, ctermfg = c.yellow },
+    User8                    = { ctermbg = c.bg_muted_1, ctermfg = c.blue },
+    User9                    = { ctermbg = c.bg_muted_1, ctermfg = c.fg_muted_2 },
   }
 
   if opts and opts.highlights then

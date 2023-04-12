@@ -6,6 +6,7 @@ All colors are configured through Terminal app. Nothing is hardcoded. Modern ter
 
 ## Screenshot
 
+
 ## Requirements
 
 Neovim >= 8.0
