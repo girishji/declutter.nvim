@@ -165,7 +165,8 @@ function M.setup(opts)
 
     -- Set specific Treesitter node tags
     -- ["@type.qualifier"]      = { link = 'PreProc' },
-    ["@text.danger"]         = { fg = c.fg_yellow, underline = true },
+    ["@text.danger"]         = { fg = c.fg_yellow, cterm = { underline = true } },
+    ["@text.literal"]        = { fg = 'NONE', bg = 'NONE', cterm = {} },
     --
 
     -- Diagnostic
