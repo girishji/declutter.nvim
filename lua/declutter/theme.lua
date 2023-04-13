@@ -173,7 +173,7 @@ function M.setup(opts)
     DiagnosticError          = { link = 'Error' },
     DiagnosticWarn           = { link = 'WarningMsg' },
     DiagnosticInfo           = { link = 'DiffText' },
-    DiagnosticHint           = { ctermfg = c.bg_green },
+    DiagnosticHint           = { ctermbg = c.bg_green },
     DiagnosticUnderlineError = { ctermbg = 'NONE', ctermfg = 'NONE', cterm = { undercurl = true, sp = c.fg_red } },
     DiagnosticUnderlineWarn  = { ctermbg = 'NONE', ctermfg = 'NONE', cterm = { undercurl = true, sp = c.fg_orange } },
     DiagnosticUnderlineInfo  = { ctermbg = 'NONE', ctermfg = 'NONE', cterm = { undercurl = true, sp = c.fg_green } },
