@@ -15,12 +15,9 @@ shell commands.
 
 Here are some colors I choose through iTerm2.
 
-[]()
+![image](https://raw.githubusercontent.com/girishji/declutter.nvim/main/screenshots/light.png)
 
-[]()
-
-
-
+![image](https://raw.githubusercontent.com/girishji/declutter.nvim/main/screenshots/dark.png)
 
 ## Requirements
 
