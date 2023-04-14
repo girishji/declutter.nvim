@@ -4,6 +4,11 @@
 -- https://jeffkreeftmeijer.com/vim-16-color/
 -- https://vimdoc.sourceforge.net/htmldoc/syntax.html
 -- https://github.com/cideM/yui
+--
+-- NOTE: It is possible to reclaim 3 more colors for syntax highlighting.
+--   bg_red/yellow/green are linked to bright_r/y/g. Instead of using these
+--   as bg colors for error/warning/hint you can only use foreground colors
+--   for these groups, and keep default bg color.
 
 
 local M = {}
@@ -26,7 +31,6 @@ M.colors = {
   bg_yellow = 11,
   bg_blue = 12,
 }
-
 
 function M.setup(opts)
   local c = M.colors
@@ -80,7 +84,7 @@ function M.setup(opts)
     DiffText                 = { ctermbg = c.bg_primary },
     --
     -- Floating Windows
-    FloatBorder              = { ctermfg = c.fg_muted_1, ctermbg = c.bg_muted_1 },
+    FloatBorder              = { ctermfg = 'NONE', ctermbg = c.bg_muted_1 },
     NormalFloat              = { ctermfg = 'NONE', ctermbg = c.bg_muted_1 }, -- Normal text in floating windows.
     -- FloatTitle               = { cterm = { bold = true } },
     -- NormalSB            = { ctermfg = c.fg_sidebar, ctermbg = c.bg_sidebar }, -- normal text in sidebar
