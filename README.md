@@ -1,10 +1,25 @@
 # Declutter
 
-Removing all the color clutter and retaining only the essential.
+Removing the clutter to reveal the essential.
 
-All colors are configured through Terminal app. Nothing is hardcoded. Modern terminals allow [16 ansi colors](https://jeffkreeftmeijer.com/vim-16-color/) to be set to whatever 24-bit hex values you choose. This theme inherits colors from terminal, so you can configure the look on the fly by directly adjusting colors in your terminal app. You will also get consistent look across shell commands.
+All colors are configured through Terminal app. Colors are not hardcoded.
+Modern terminals allow [16 ansi
+colors](https://jeffkreeftmeijer.com/vim-16-color/) to be set to whatever
+24-bit hex values you choose. This means you can set these colors to a precise
+shade unlike the rest of 256 (-16) colors in cterm palette. Since this theme
+inherits colors from terminal you can configure the look on the fly by directly
+adjusting colors in your terminal app. You will also get consistent look across
+shell commands.
 
 ## Screenshot
+
+Here are some colors I choose through iTerm2.
+
+[]()
+
+[]()
+
+
 
 
 ## Requirements
