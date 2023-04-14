@@ -77,19 +77,6 @@ To enable the `declutter` theme from `lazy.nvim`:
    -- ... your lazy.nvim config
 ```
 
-To enable the `declutter` theme for `Lualine`, simply specify it in your
-lualine settings:
-
-```lua
-require('lualine').setup {
-  options = {
-    -- ... your lualine config
-    theme = 'declutter'
-    -- ... your lualine config
-  }
-}
-```
-
 ## Configuration
 
 There is not much to configure. You could redefine highlight groups as follows.  
