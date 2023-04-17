@@ -113,6 +113,7 @@ function M.setup(opts)
     -- *Identifier	any variable name
     --  Function	function name (also: methods for classes)
     Identifier               = { ctermfg = 'NONE' },
+    ["@keyword.function"]    = { ctermfg = 'NONE', cterm = { bold = true } },
     --
     -- *Statement	any statement
     --  Conditional	if, then, else, endif, switch, etc.
