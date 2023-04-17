@@ -145,6 +145,7 @@ function M.setup(opts)
     StorageClass             = { ctermfg = 'NONE', cterm = { italic = true } },
     -- Structure                = { ctermfg = 'NONE', cterm = { italic = true } },
     Typedef                  = { ctermfg = 'NONE', cterm = { italic = true } },
+    ["@type.qualifier"]      = { ctermfg = 'NONE', cterm = { italic = true } },
     --
     -- *Special	any special symbol
     --  SpecialChar	special character in a constant
