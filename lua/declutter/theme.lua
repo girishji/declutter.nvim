@@ -116,20 +116,18 @@ function M.setup(opts)
     ["@function"]            = { ctermfg = 'NONE', cterm = { bold = true } },
     ["@function.call"]       = { ctermfg = 'NONE', cterm = {} },
     ["@function.builtin"]    = { ctermfg = 'NONE', cterm = {} },
+    ["@method"]              = { ctermfg = 'NONE', cterm = { bold = true } },
+    ["@method.call"]         = { ctermfg = 'NONE', cterm = {} },
+    ["@method.builtin"]      = { ctermfg = 'NONE', cterm = {} },
     --
     -- *Statement	any statement
     --  Conditional	if, then, else, endif, switch, etc.
     --  Repeat		for, do, while, etc.
     --  Label		case, default, etc.
     --  Operator	"sizeof", "+", "*", etc.
-    --  Keyword	any other keyword (class, return, etc.)
+    --  Keyword	        any other keyword (class, return, etc.)
     --  Exception	try, catch, throw
     Statement                = { ctermfg = 'NONE' },
-    -- Keyword                  = { ctermfg = 'NONE', cterm = { bold = true } },
-    -- Exception                = { link = 'Keyword' },
-    -- Conditional              = { link = 'Keyword' },
-    -- Repeat                   = { link = 'Keyword' },
-    -- Label                    = { link = 'Keyword' },
     Operator                 = { link = 'Delimiter' },
     --
     -- *PreProc	generic Preprocessor
