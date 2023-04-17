@@ -119,7 +119,10 @@ function M.setup(opts)
     ["@method"]              = { ctermfg = 'NONE', cterm = { bold = true } },
     ["@method.call"]         = { ctermfg = 'NONE', cterm = {} },
     ["@method.builtin"]      = { ctermfg = 'NONE', cterm = {} },
-    ["@class"]               = { ctermfg = 'NONE', cterm = { bold = true } },
+    ["@class_name"]          = { ctermfg = 'NONE', cterm = { bold = true } },
+    ["@interface_name"]      = { link = 'class_name' },
+    ["@record_name"]         = { link = 'class_name' },
+    ["@enum_name"]           = { link = 'class_name' },
     --
     -- *Statement	any statement
     --  Conditional	if, then, else, endif, switch, etc.

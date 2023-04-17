@@ -1,8 +1,9 @@
+;; extends
 (interface_declaration
-  name: (identifier) @interface)
+  name: (identifier) @interface_name)
 (class_declaration
-  name: (identifier) @class)
+  name: (identifier) @class_name)
 (record_declaration
-  name: (identifier) @record)
+  name: (identifier) @record_name)
 (enum_declaration
-  name: (identifier) @enum)
+  name: (identifier) @enum_name)

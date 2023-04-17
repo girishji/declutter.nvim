@@ -1,1 +1,2 @@
-(class_definition name: (identifier) @class)
+;; extends
+(class_definition name: (identifier) @class_name)
