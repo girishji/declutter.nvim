@@ -119,6 +119,7 @@ function M.setup(opts)
     ["@method"]              = { ctermfg = 'NONE', cterm = { bold = true } },
     ["@method.call"]         = { ctermfg = 'NONE', cterm = {} },
     ["@method.builtin"]      = { ctermfg = 'NONE', cterm = {} },
+    ["@class"]               = { ctermfg = 'NONE', cterm = { bold = true } },
     --
     -- *Statement	any statement
     --  Conditional	if, then, else, endif, switch, etc.
