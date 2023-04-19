@@ -20,7 +20,7 @@ M.colors = {
   bg_muted_2 = 15,   -- proxy for bg, cursorline
   primary = 5,       -- magenta
   bg_primary = 13,   -- bright magenta
-  secondary = 6,     -- cyan
+  secondary = 6,     -- cyan (TODO: not used anywhere in syntax)
   bg_secondary = 14, -- bringt cyan (Operator)
   red = 1,
   green = 2,
@@ -51,7 +51,7 @@ function M.setup(opts)
     SpellCap                 = { ctermbg = c.bg_green },
     SpellRare                = { ctermbg = c.bg_yellow },
     SpellLocal               = { ctermbg = c.bg_blue },
-    NonText                  = { ctermfg = c.fg_muted_1 },
+    NonText                  = { ctermfg = c.fg_muted_2 }, -- some text in :nmap
     LineNr                   = { ctermfg = c.fg_muted_1 },
     CursorLineNr             = { ctermbg = c.bg_muted_2, cterm = {} },
     Visual                   = { ctermbg = c.bg_primary },
