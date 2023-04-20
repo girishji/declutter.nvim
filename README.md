@@ -2,14 +2,18 @@
 
 Removing the clutter to reveal the essential.
 
-All colors are configured through Terminal app. Colors are not hardcoded.
-Modern terminals allow [16 ansi
+All colors are configured directly through the terminal app of your choice.
+Colors are not hardcoded. Modern terminals allow [16 ansi
 colors](https://jeffkreeftmeijer.com/vim-16-color/) to be set to whatever
 24-bit hex values you choose. This means you can set these colors to a precise
-shade unlike the rest of 256 (-16) colors in cterm palette. Since this theme
-inherits colors from terminal you can configure the look on the fly by directly
-adjusting colors in your terminal app. You will also get consistent look across
-shell commands.
+shade. Since this theme inherits colors from terminal you can configure the
+look on the fly by directly adjusting colors in your terminal app. You will
+also get consistent look across shell commands.
+
+Syntax highlighting is kept to a minimum. There is no advantage from
+readability perspective by assigning rainbow colors to every syntactic
+artifact, especially if those colors have no inherent meaning. I created this
+color scheme for my own use, and hopefully you will find it useful also.
 
 ## Screenshot
 
