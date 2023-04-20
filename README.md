@@ -3,7 +3,7 @@
 Removing the clutter to reveal the essential.
 
 All colors are configured directly through the terminal app of your choice.
-Colors are not hardcoded. Modern terminals allow [16 ansi
+Colors are not hard-coded. Modern terminals allow [16 ANSI
 colors](https://jeffkreeftmeijer.com/vim-16-color/) to be set to whatever
 24-bit hex values you choose. This means you can set these colors to a precise
 shade. Since this theme inherits colors from terminal you can configure the

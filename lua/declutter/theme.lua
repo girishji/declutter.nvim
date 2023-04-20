@@ -161,7 +161,7 @@ function M.setup(opts)
     Delimiter                = { ctermfg = c.bg_secondary, cterm = {} }, -- operator symbols
     --
     -- *Underlined	text that stands out, HTML links
-    Underlined               = { ctermfg = c.fg_muted_1, cterm = { underline = true } },
+    Underlined               = { ctermfg = c.fg_muted_2, cterm = { underline = true } },
     --
     -- *Ignore		left blank, hidden  |hl-Ignore|
     Ignore                   = { ctermfg = 'NONE' },
@@ -176,6 +176,7 @@ function M.setup(opts)
     -- Set specific Treesitter node tags
     -- ["@type.qualifier"]      = { link = 'PreProc' },
     ["@text.danger"]         = { fg = c.fg_yellow, cterm = { underline = true } },
+    ["@text.uri"]            = { fg = c.fg_muted_2 },
     ["@text.literal"]        = { link = 'NONE' },
     --
 
