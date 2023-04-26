@@ -14,7 +14,7 @@
 local M = {}
 
 M.colors = {
-  fg_muted_1 = 0,    -- black: LineNr
+  fg_muted_1 = 0,    -- black
   fg_muted_2 = 8,    -- bright black
   bg_muted_1 = 7,    -- overlay for ui elemeents
   bg_muted_2 = 15,   -- proxy for bg, cursorline
@@ -53,7 +53,7 @@ function M.setup(opts)
     SpellLocal               = { ctermbg = c.bg_blue, cterm = { underline = true } },
     NonText                  = { ctermfg = c.fg_muted_2 }, -- some text in :nmap
     LineNr                   = { ctermfg = c.fg_muted_1 },
-    CursorLineNr             = { ctermbg = c.bg_muted_2, cterm = {} },
+    CursorLineNr             = { ctermbg = c.bg_muted_2, ctermfg = c.fg_muted_2, cterm = {} },
     Visual                   = { ctermbg = c.bg_primary },
     IncSearch                = { ctermfg = c.primary, cterm = { reverse = true } },
     Search                   = { ctermfg = c.primary, ctermbg = c.fg_muted_1 },
