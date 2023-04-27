@@ -11,7 +11,7 @@ M.markdown_hl_fenced_code_block = function()
   local function set_sign_hl()
     -- local bufnr = 0
     local bufnr = vim.api.nvim_get_current_buf()
-    local query = vim.treesitter.query.parse('markdown', '(fenced_code_block) @codeblock')
+    local query = vim.treesitter.query.parse('markdown', '(fenced_code_block (code_fence_content) @codeblock)')
     local parser = vim.treesitter.get_parser(bufnr, 'markdown')
     local tree = parser:parse()
     -- p(getmetatable(tree[1]))
