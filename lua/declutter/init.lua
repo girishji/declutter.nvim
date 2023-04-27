@@ -25,6 +25,7 @@ end
 function M.run()
   local theme = require('declutter.theme').setup(M.options)
   load(theme)
+  require('declutter.treesitter').markdown_hl_fenced_code_block()
 end
 
 return M

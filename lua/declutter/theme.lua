@@ -20,7 +20,7 @@ M.colors = {
   bg_muted_2 = 15,   -- proxy for bg, cursorline
   primary = 5,       -- magenta
   bg_primary = 13,   -- bright magenta
-  secondary = 6,     -- cyan (TODO: not used anywhere in syntax)
+  secondary = 6,     -- cyan
   bg_secondary = 14, -- bringt cyan (Operator)
   red = 1,
   green = 2,
@@ -158,7 +158,7 @@ function M.setup(opts)
     --  SpecialComment	special things inside a comment
     --  Debug		debugging statements
     Special                  = { ctermfg = 'NONE' },
-    Delimiter                = { ctermfg = c.bg_secondary, cterm = {} }, -- operator symbols
+    Delimiter                = { ctermfg = c.secondary, cterm = {} }, -- operator symbols
     --
     -- *Underlined	text that stands out, HTML links
     Underlined               = { ctermfg = c.fg_muted_2, cterm = { underline = true } },
@@ -230,6 +230,8 @@ function M.setup(opts)
     User7                    = { ctermbg = c.bg_muted_1, ctermfg = c.yellow },
     User8                    = { ctermbg = c.bg_muted_1, ctermfg = c.blue },
     User9                    = { ctermbg = c.bg_muted_1, ctermfg = c.fg_muted_2 },
+    -- Defined in treesitter markdown
+    FencedCodeBlock          = { ctermbg = c.bg_secondary },
   }
 
   if opts and opts.highlights then

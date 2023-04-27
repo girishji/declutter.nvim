@@ -7,3 +7,6 @@
   name: (identifier) @record_name)
 (enum_declaration
   name: (identifier) @enum_name)
+
+; spell check
+(comment) @spell
