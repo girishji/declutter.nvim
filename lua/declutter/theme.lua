@@ -222,14 +222,14 @@ function M.setup(opts)
     GitSignsDelete           = { ctermbg = 'NONE', ctermfg = c.red },
     -- Statusline
     User1                    = { ctermbg = c.bg_muted_1, ctermfg = 'NONE' },
-    User2                    = { ctermbg = c.bg_muted_1, ctermfg = c.primary },
+    User2                    = { ctermbg = c.bg_primary, ctermfg = 'NONE' },
     User3                    = { ctermbg = c.bg_muted_1, ctermfg = c.secondary },
     User4                    = { ctermbg = c.bg_muted_1, ctermfg = c.fg_muted_1 },
     User5                    = { ctermbg = c.bg_muted_1, ctermfg = c.red },
     User6                    = { ctermbg = c.bg_muted_1, ctermfg = c.green },
     User7                    = { ctermbg = c.bg_muted_1, ctermfg = c.yellow },
     User8                    = { ctermbg = c.bg_muted_1, ctermfg = c.blue },
-    User9                    = { ctermbg = c.bg_muted_1, ctermfg = c.fg_muted_2 },
+    User9                    = { ctermbg = c.bg_muted_1, ctermfg = 'NONE', cterm = { italic = true } },
     -- Defined in treesitter markdown
     FencedCodeBlock          = { ctermbg = c.bg_secondary },
   }
