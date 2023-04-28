@@ -43,63 +43,63 @@ function M.setup(opts)
     -- Consequently, we cannot determine fg and bg color without querying the terminal.
     --   Substitute 'bold cyan' as proxy for bg color
     -- Normal = for Normal mindowns, NormalNC = for non current windows
-    Cursor                   = { ctermbg = c.primary },
-    CursorLine               = { ctermbg = c.bg_muted_2, cterm = {} },
-    MatchParen               = { ctermbg = c.bg_blue },
-    ColorColumn              = { ctermbg = c.bg_muted_1 },
-    SpellBad                 = { ctermbg = c.bg_red, cterm = { underline = true } },
-    SpellCap                 = { ctermbg = c.bg_green, cterm = { underline = true } },
-    SpellRare                = { ctermbg = c.bg_yellow, cterm = { underline = true } },
-    SpellLocal               = { ctermbg = c.bg_blue, cterm = { underline = true } },
-    NonText                  = { ctermfg = c.fg_muted_2 }, -- some text in :nmap
-    LineNr                   = { ctermfg = c.fg_muted_1 },
-    CursorLineNr             = { ctermbg = c.bg_muted_2, ctermfg = c.fg_muted_2, cterm = {} },
-    Visual                   = { ctermbg = c.bg_primary },
-    IncSearch                = { ctermfg = c.primary, cterm = { reverse = true } },
-    Search                   = { ctermfg = c.primary, ctermbg = c.fg_muted_1 },
-    StatusLine               = { ctermbg = c.bg_muted_1 },
-    StatusLineNC             = { ctermbg = 'NONE' },
-    TabLine                  = { ctermbg = c.bg_muted_1 },
-    TabLineSel               = { ctermbg = c.bg_muted_2 },
-    Folded                   = { ctermfg = c.primary, cterm = { bold = true } },
-    Conceal                  = { ctermfg = c.primary },
-    Directory                = { ctermfg = c.bg_blue },
-    Title                    = { ctermfg = c.primary, cterm = { bold = true } },
-    ErrorMsg                 = { link = 'DiffDelete' }, -- error messages on the command line
-    WarningMsg               = { link = 'DiffChange' },
-    MoreMsg                  = { link = 'Title' },      -- 'show more' prompt
-    ModeMsg                  = { link = 'MoreMsg' },    -- 'showmode' message (e.g., "-- INSERT --")
-    CursorColumn             = { link = 'CursorLine' },
-    SignColumn               = { link = 'LineNr' },
-    WildMenu                 = { link = 'Visual' },
-    FoldColumn               = { link = 'SignColumn' },
-    Question                 = { link = 'MoreMsg' },
-    TabLineFill              = { link = 'StatusLineNC' },
-    SpecialKey               = { link = 'NonText' },
+    Cursor                     = { ctermbg = c.primary },
+    CursorLine                 = { ctermbg = c.bg_muted_2, cterm = {} },
+    MatchParen                 = { ctermbg = c.bg_blue },
+    ColorColumn                = { ctermbg = c.bg_muted_1 },
+    SpellBad                   = { ctermbg = c.bg_red, cterm = { underline = true } },
+    SpellCap                   = { ctermbg = c.bg_green, cterm = { underline = true } },
+    SpellRare                  = { ctermbg = c.bg_yellow, cterm = { underline = true } },
+    SpellLocal                 = { ctermbg = c.bg_blue, cterm = { underline = true } },
+    NonText                    = { ctermfg = c.fg_muted_2 }, -- some text in :nmap
+    LineNr                     = { ctermfg = c.fg_muted_1 },
+    CursorLineNr               = { ctermbg = c.bg_muted_2, ctermfg = c.fg_muted_2, cterm = {} },
+    Visual                     = { ctermbg = c.bg_primary },
+    IncSearch                  = { ctermfg = c.primary, cterm = { reverse = true } },
+    Search                     = { ctermfg = c.primary, ctermbg = c.fg_muted_1 },
+    StatusLine                 = { ctermbg = c.bg_muted_1 },
+    StatusLineNC               = { ctermbg = 'NONE' },
+    TabLine                    = { ctermbg = c.bg_muted_1 },
+    TabLineSel                 = { ctermbg = c.bg_muted_2 },
+    Folded                     = { ctermfg = c.primary, cterm = { bold = true } },
+    Conceal                    = { ctermfg = c.primary },
+    Directory                  = { ctermfg = c.bg_blue },
+    Title                      = { ctermfg = c.primary, cterm = { bold = true } },
+    ErrorMsg                   = { link = 'DiffDelete' }, -- error messages on the command line
+    WarningMsg                 = { link = 'DiffChange' },
+    MoreMsg                    = { link = 'Title' },      -- 'show more' prompt
+    ModeMsg                    = { link = 'MoreMsg' },    -- 'showmode' message (e.g., "-- INSERT --")
+    CursorColumn               = { link = 'CursorLine' },
+    SignColumn                 = { link = 'LineNr' },
+    WildMenu                   = { link = 'Visual' },
+    FoldColumn                 = { link = 'SignColumn' },
+    Question                   = { link = 'MoreMsg' },
+    TabLineFill                = { link = 'StatusLineNC' },
+    SpecialKey                 = { link = 'NonText' },
     --
     -- nvim -d (vimdiff)
-    DiffAdd                  = { ctermbg = c.bg_green },
-    DiffChange               = { ctermbg = c.bg_yellow },
-    DiffDelete               = { ctermbg = c.bg_red },
-    DiffText                 = { ctermbg = c.bg_primary },
+    DiffAdd                    = { ctermbg = c.bg_green },
+    DiffChange                 = { ctermbg = c.bg_yellow },
+    DiffDelete                 = { ctermbg = c.bg_red },
+    DiffText                   = { ctermbg = c.bg_primary },
     --
     -- Floating Windows
-    FloatBorder              = { ctermfg = 'NONE', ctermbg = c.bg_muted_1 },
-    NormalFloat              = { ctermfg = 'NONE', ctermbg = c.bg_muted_1 }, -- Normal text in floating windows.
+    FloatBorder                = { ctermfg = 'NONE', ctermbg = c.bg_muted_1 },
+    NormalFloat                = { ctermfg = 'NONE', ctermbg = c.bg_muted_1 }, -- Normal text in floating windows.
     -- FloatTitle               = { cterm = { bold = true } },
     -- NormalSB            = { ctermfg = c.fg_sidebar, ctermbg = c.bg_sidebar }, -- normal text in sidebar
     --
-    WinSeparator             = { link = 'FloatBorder' },
+    WinSeparator               = { link = 'FloatBorder' },
     --
-    Pmenu                    = { link = 'NormalFloat' },
-    PmenuSel                 = { link = 'Visual' },
-    PmenuSBar                = { link = 'Visual' },        -- scrollbar
-    PmenuThumb               = { ctermbg = c.fg_muted_1 }, -- thumb of scrollbar
+    Pmenu                      = { link = 'NormalFloat' },
+    PmenuSel                   = { link = 'Visual' },
+    PmenuSBar                  = { link = 'Visual' },        -- scrollbar
+    PmenuThumb                 = { ctermbg = c.fg_muted_1 }, -- thumb of scrollbar
     --
     -- Generic syntax
     -- https://vimdoc.sourceforge.net/htmldoc/syntax.html
     --    *Comment	any comment
-    Comment                  = { ctermfg = c.fg_muted_2, cterm = { italic = true } },
+    Comment                    = { ctermfg = c.fg_muted_2, cterm = { italic = true } },
     --
     -- *Constant	any constant
     --  String		a string constant: "this is a string"
@@ -107,22 +107,22 @@ function M.setup(opts)
     --  Number		a number constant: 234, 0xff
     --  Boolean	a boolean constant: TRUE, false
     --  Float		a floating point constant: 2.3e10
-    Constant                 = { ctermfg = 'NONE' },
-    String                   = { ctermfg = 'NONE', cterm = { italic = true } },
+    Constant                   = { ctermfg = 'NONE' },
+    String                     = { ctermfg = 'NONE', cterm = { italic = true } },
     --
     -- *Identifier	any variable name
     --  Function	function name (also: methods for classes)
-    Identifier               = { ctermfg = 'NONE' },
-    ["@function"]            = { ctermfg = 'NONE', cterm = { bold = true } },
-    ["@function.call"]       = { ctermfg = 'NONE', cterm = {} },
-    ["@function.builtin"]    = { ctermfg = 'NONE', cterm = {} },
-    ["@method"]              = { ctermfg = 'NONE', cterm = { bold = true } },
-    ["@method.call"]         = { ctermfg = 'NONE', cterm = {} },
-    ["@method.builtin"]      = { ctermfg = 'NONE', cterm = {} },
-    ["@class_name"]          = { ctermfg = 'NONE', cterm = { bold = true } },
-    ["@interface_name"]      = { link = 'class_name' },
-    ["@record_name"]         = { link = 'class_name' },
-    ["@enum_name"]           = { link = 'class_name' },
+    Identifier                 = { ctermfg = 'NONE' },
+    ["@function"]              = { ctermfg = 'NONE', cterm = { bold = true } },
+    ["@function.call"]         = { ctermfg = 'NONE', cterm = {} },
+    ["@function.builtin"]      = { ctermfg = 'NONE', cterm = {} },
+    ["@method"]                = { ctermfg = 'NONE', cterm = { bold = true } },
+    ["@method.call"]           = { ctermfg = 'NONE', cterm = {} },
+    ["@method.builtin"]        = { ctermfg = 'NONE', cterm = {} },
+    ["@class_name"]            = { ctermfg = 'NONE', cterm = { bold = true } },
+    ["@interface_name"]        = { link = 'class_name' },
+    ["@record_name"]           = { link = 'class_name' },
+    ["@enum_name"]             = { link = 'class_name' },
     --
     -- *Statement	any statement
     --  Conditional	if, then, else, endif, switch, etc.
@@ -131,25 +131,25 @@ function M.setup(opts)
     --  Operator	"sizeof", "+", "*", etc.
     --  Keyword	        any other keyword (class, return, etc.)
     --  Exception	try, catch, throw
-    Statement                = { ctermfg = 'NONE' },
-    Operator                 = { link = 'Delimiter' },
+    Statement                  = { ctermfg = 'NONE' },
+    Operator                   = { link = 'Delimiter' },
     --
     -- *PreProc	generic Preprocessor
     --  Include	preprocessor #include
     --  Define		preprocessor #define
     --  Macro		same as Define
     --  PreCondit	preprocessor #if, #else, #endif, etc.
-    PreProc                  = { ctermfg = 'NONE', cterm = { italic = true } },
+    PreProc                    = { ctermfg = 'NONE', cterm = { italic = true } },
     --
     -- *Type		int, long, char, etc.
     --  StorageClass	static, register, volatile, etc.
     --  Structure	struct, union, enum, etc.
     --  Typedef	A typedef
-    Type                     = { ctermfg = 'NONE' },
-    StorageClass             = { ctermfg = 'NONE', cterm = { italic = true } },
+    Type                       = { ctermfg = 'NONE' },
+    StorageClass               = { ctermfg = 'NONE', cterm = { italic = true } },
     -- Structure                = { ctermfg = 'NONE', cterm = { italic = true } },
-    Typedef                  = { ctermfg = 'NONE', cterm = { italic = true } },
-    ["@type.qualifier"]      = { ctermfg = 'NONE', cterm = { italic = true } },
+    Typedef                    = { ctermfg = 'NONE', cterm = { italic = true } },
+    ["@type.qualifier"]        = { ctermfg = 'NONE', cterm = { italic = true } },
     --
     -- *Special	any special symbol
     --  SpecialChar	special character in a constant
@@ -157,81 +157,87 @@ function M.setup(opts)
     --  Delimiter	character that needs attention
     --  SpecialComment	special things inside a comment
     --  Debug		debugging statements
-    Special                  = { ctermfg = 'NONE' },
-    Delimiter                = { ctermfg = c.secondary, cterm = {} }, -- operator symbols
+    Special                    = { ctermfg = 'NONE' },
+    Delimiter                  = { ctermfg = c.secondary, cterm = {} }, -- operator symbols
     --
     -- *Underlined	text that stands out, HTML links
-    Underlined               = { ctermfg = c.fg_muted_2, cterm = { underline = true } },
+    Underlined                 = { ctermfg = c.fg_muted_2, cterm = { underline = true } },
     --
     -- *Ignore		left blank, hidden  |hl-Ignore|
-    Ignore                   = { ctermfg = 'NONE' },
+    Ignore                     = { ctermfg = 'NONE' },
     --
     -- *Error		any erroneous construct
-    Error                    = { link = 'ErrorMsg' },
+    Error                      = { link = 'ErrorMsg' },
     --
     -- *Todo		anything that needs extra attention; mostly the
-    Todo                     = { ctermfg = c.primary, ctermbg = 'NONE', cterm = { bold = true, underline = true } },
+    Todo                       = { ctermfg = c.primary, ctermbg = 'NONE', cterm = { bold = true, underline = true } },
     --
 
     -- Set specific Treesitter node tags
     -- ["@type.qualifier"]      = { link = 'PreProc' },
-    ["@text.danger"]         = { ctermfg = c.fg_yellow, cterm = { underline = true } },
-    ["@text.uri"]            = { ctermfg = c.fg_muted_2 },
-    ["@text.literal"]        = { link = 'NONE' },
+    ["@text.danger"]           = { ctermfg = c.fg_yellow, cterm = { underline = true } },
+    ["@text.uri"]              = { ctermfg = c.fg_muted_2 },
+    ["@text.literal"]          = { link = 'NONE' },
     --
 
     -- Diagnostic
-    DiagnosticError          = { link = 'Error' },
-    DiagnosticWarn           = { link = 'WarningMsg' },
-    DiagnosticInfo           = { link = 'DiffText' },
-    DiagnosticHint           = { ctermbg = c.bg_green },
-    DiagnosticUnderlineError = { ctermbg = 'NONE', ctermfg = 'NONE', cterm = { undercurl = true, sp = c.fg_red } },
-    DiagnosticUnderlineWarn  = { ctermbg = 'NONE', ctermfg = 'NONE', cterm = { undercurl = true, sp = c.fg_orange } },
-    DiagnosticUnderlineInfo  = { ctermbg = 'NONE', ctermfg = 'NONE', cterm = { undercurl = true, sp = c.fg_green } },
-    DiagnosticUnderlineHint  = { ctermbg = 'NONE', ctermfg = 'NONE', cterm = { undercurl = true, sp = c.fg_green } },
-    DiagnosticSignError      = { ctermbg = 'NONE', ctermfg = c.red },
-    DiagnosticSignWarn       = { ctermbg = 'NONE', ctermfg = c.yellow },
-    DiagnosticSignInfo       = { ctermbg = 'NONE', ctermfg = c.blue },
-    DiagnosticSignHint       = { ctermbg = 'NONE', ctermfg = c.green },
+    DiagnosticError            = { link = 'Error' },
+    DiagnosticWarn             = { link = 'WarningMsg' },
+    DiagnosticInfo             = { link = 'DiffText' },
+    DiagnosticHint             = { ctermbg = c.bg_green },
+    DiagnosticUnderlineError   = { ctermbg = 'NONE', ctermfg = 'NONE', cterm = { undercurl = true, sp = c.fg_red } },
+    DiagnosticUnderlineWarn    = { ctermbg = 'NONE', ctermfg = 'NONE', cterm = { undercurl = true, sp = c.fg_orange } },
+    DiagnosticUnderlineInfo    = { ctermbg = 'NONE', ctermfg = 'NONE', cterm = { undercurl = true, sp = c.fg_green } },
+    DiagnosticUnderlineHint    = { ctermbg = 'NONE', ctermfg = 'NONE', cterm = { undercurl = true, sp = c.fg_green } },
+    DiagnosticSignError        = { ctermbg = 'NONE', ctermfg = c.red },
+    DiagnosticSignWarn         = { ctermbg = 'NONE', ctermfg = c.yellow },
+    DiagnosticSignInfo         = { ctermbg = 'NONE', ctermfg = c.blue },
+    DiagnosticSignHint         = { ctermbg = 'NONE', ctermfg = c.green },
     --
 
     -- nvim-cmp
-    CmpItemAbbrMatch         = { ctermfg = c.primary },
-    CmpItemAbbrSelect        = { link = 'Visual' },
-    CmpItemAbbrMatchFuzzy    = { cterm = { bold = true } },
+    CmpItemAbbrMatch           = { ctermfg = c.primary },
+    CmpItemAbbrSelect          = { link = 'Visual' },
+    CmpItemAbbrMatchFuzzy      = { cterm = { bold = true } },
     --
 
     -- indent-blankline
-    IndentBlanklineIndent1   = { ctermfg = c.fg_muted_1, cterm = { nocombine = true } },
-    IndentBlanklineIndent2   = { link = 'IndentBlanklineIndent1' },
-    IndentBlanklineIndent3   = { link = 'IndentBlanklineIndent1' },
-    IndentBlanklineIndent4   = { link = 'IndentBlanklineIndent1' },
-    IndentBlanklineIndent5   = { link = 'IndentBlanklineIndent1' },
-    IndentBlanklineIndent6   = { link = 'IndentBlanklineIndent1' },
+    IndentBlanklineIndent1     = { ctermfg = c.fg_muted_1, cterm = { nocombine = true } },
+    IndentBlanklineIndent2     = { link = 'IndentBlanklineIndent1' },
+    IndentBlanklineIndent3     = { link = 'IndentBlanklineIndent1' },
+    IndentBlanklineIndent4     = { link = 'IndentBlanklineIndent1' },
+    IndentBlanklineIndent5     = { link = 'IndentBlanklineIndent1' },
+    IndentBlanklineIndent6     = { link = 'IndentBlanklineIndent1' },
     --
 
     -- Telescope
-    TelescopeNormal          = { link = 'NormalFloat' },
-    TelescopeBorder          = { link = 'FloatBorder' },
-    TelescopeSelection       = { link = 'Visual' },
-    TelescopeMatching        = { ctermfg = c.primary },
+    TelescopeNormal            = { link = 'NormalFloat' },
+    TelescopeBorder            = { link = 'FloatBorder' },
+    TelescopeSelection         = { link = 'Visual' },
+    TelescopeMatching          = { ctermfg = c.primary },
     --
     -- git
-    GitSignsAdd              = { ctermbg = 'NONE', ctermfg = c.green },
-    GitSignsChange           = { ctermbg = 'NONE', ctermfg = c.yellow },
-    GitSignsDelete           = { ctermbg = 'NONE', ctermfg = c.red },
+    GitSignsAdd                = { ctermbg = 'NONE', ctermfg = c.green },
+    GitSignsChange             = { ctermbg = 'NONE', ctermfg = c.yellow },
+    GitSignsDelete             = { ctermbg = 'NONE', ctermfg = c.red },
     -- Statusline
-    User1                    = { ctermbg = c.bg_muted_1, ctermfg = 'NONE' },
-    User2                    = { ctermbg = c.bg_primary, ctermfg = 'NONE' },
-    User3                    = { ctermbg = c.bg_muted_1, ctermfg = c.secondary },
-    User4                    = { ctermbg = c.bg_muted_1, ctermfg = c.fg_muted_1 },
-    User5                    = { ctermbg = c.bg_muted_1, ctermfg = c.red },
-    User6                    = { ctermbg = c.bg_muted_1, ctermfg = c.green },
-    User7                    = { ctermbg = c.bg_muted_1, ctermfg = c.yellow },
-    User8                    = { ctermbg = c.bg_muted_1, ctermfg = c.blue },
-    User9                    = { ctermbg = c.bg_muted_1, ctermfg = 'NONE', cterm = { italic = true } },
+    User1                      = { ctermbg = c.bg_muted_1, ctermfg = 'NONE' },
+    User2                      = { ctermbg = c.bg_primary, ctermfg = 'NONE' },
+    User3                      = { ctermbg = c.bg_muted_1, ctermfg = c.secondary },
+    User4                      = { ctermbg = c.bg_muted_1, ctermfg = c.fg_muted_1 },
+    User5                      = { ctermbg = c.bg_muted_1, ctermfg = c.red },
+    User6                      = { ctermbg = c.bg_muted_1, ctermfg = c.green },
+    User7                      = { ctermbg = c.bg_muted_1, ctermfg = c.yellow },
+    User8                      = { ctermbg = c.bg_muted_1, ctermfg = c.blue },
+    User9                      = { ctermbg = c.bg_muted_1, ctermfg = 'NONE', cterm = { italic = true } },
     -- Defined in treesitter markdown
-    FencedCodeBlock          = { ctermbg = c.bg_secondary },
+    FencedCodeBlock            = { ctermbg = c.bg_secondary },
+    ["@code.inline"]           = { ctermbg = c.bg_secondary },
+    ["@punctuation.delimiter"] = { ctermfg = c.fg_muted_1 },
+    ["@conceal1"]              = { ctermfg = c.fg_muted_1 },
+    ["@conceal2"]              = { ctermfg = c.fg_muted_1 },
+    ["@text.emphasis"]         = { cterm = { italic = true } },
+    ["@text.strong"]           = { cterm = { bold = true } },
   }
 
   if opts and opts.highlights then
