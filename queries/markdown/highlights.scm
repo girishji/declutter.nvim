@@ -11,4 +11,5 @@
   (atx_h4_marker)
   (atx_h5_marker)
   (atx_h6_marker)
+  (emphasis_delimiter)
 ] @deemphasize
