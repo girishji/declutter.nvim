@@ -1,6 +1,8 @@
 ;; extends
 (fenced_code_block
-  (info_string) @conceal1)
+  (info_string) @deemphasize)
+
+(fenced_code_block_delimiter) @deemphasize
 
 [
   (atx_h1_marker)
@@ -9,4 +11,4 @@
   (atx_h4_marker)
   (atx_h5_marker)
   (atx_h6_marker)
-] @conceal2
+] @deemphasize
