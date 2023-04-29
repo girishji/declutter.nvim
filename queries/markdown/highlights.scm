@@ -11,4 +11,39 @@
   (atx_h4_marker)
   (atx_h5_marker)
   (atx_h6_marker)
+  (block_quote_marker)
 ] @deemphasize
+
+; Task items:
+;  ✔ task1
+;  ☐ task2
+;  ☐ task2.1
+;  ✔ task2.2
+;
+; Create tasks as list:
+; - [ ] foo
+; - [x] bar
+(list
+  (list_item
+    (list_marker_minus) @conceal (#set! conceal "")
+    (task_list_marker_checked)
+)) 
+(list
+  (list_item
+    (list_marker_minus) @conceal (#set! conceal "")
+    (task_list_marker_unchecked)
+)) 
+([
+   (task_list_marker_checked)
+] @conceal (#set! conceal "✔"))
+([
+   (task_list_marker_unchecked)
+] @conceal (#set! conceal "☐"))
+
+; FIXME: Do not conceal list item markers (-, +, *). Some bug causes coceal to
+; eat up the space after marker.
+; ([
+;    (list_marker_minus)
+;    (list_marker_plus)
+;    (list_marker_star)
+; ] @conceal1 (#set! conceal "•"))

@@ -232,10 +232,14 @@ function M.setup(opts)
     User9                    = { ctermbg = c.bg_muted_1, ctermfg = 'NONE', cterm = { italic = true } },
     -- Defined in treesitter markdown
     FencedCodeBlock          = { ctermbg = c.bg_secondary },
+    BlockQuote               = { link = 'FencedCodeBlock' },
     ["@code.inline"]         = { ctermbg = c.bg_secondary },
     ["@deemphasize"]         = { ctermfg = c.fg_muted_1 },
     ["@text.emphasis"]       = { cterm = { italic = true } },
     ["@text.strong"]         = { cterm = { bold = true } },
+    ["@text.inline_link"]    = { ctermfg = c.blue },
+    ["@text.todo.checked"]   = { ctermfg = c.secondary },
+    ["@text.todo.unchecked"] = { ctermfg = c.secondary },
   }
 
   if opts and opts.highlights then
