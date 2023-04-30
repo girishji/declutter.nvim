@@ -149,7 +149,6 @@ function M.setup(opts)
     StorageClass             = { ctermfg = 'NONE', cterm = { italic = true } },
     -- Structure                = { ctermfg = 'NONE', cterm = { italic = true } },
     Typedef                  = { ctermfg = 'NONE', cterm = { italic = true } },
-    ["@type.qualifier"]      = { ctermfg = 'NONE', cterm = { italic = true } },
     --
     -- *Special	any special symbol
     --  SpecialChar	special character in a constant
@@ -230,7 +229,12 @@ function M.setup(opts)
     User7                    = { ctermbg = c.bg_muted_1, ctermfg = c.yellow },
     User8                    = { ctermbg = c.bg_muted_1, ctermfg = c.blue },
     User9                    = { ctermbg = c.bg_muted_1, ctermfg = 'NONE', cterm = { italic = true } },
-    -- Defined in treesitter markdown
+    -- Treesitter
+    ["@type.qualifier"]      = { ctermfg = 'NONE', cterm = { italic = true } },
+    ["@type.builtin"]        = { link = "@type.qualifier" },
+    ["@keyword.return"]      = { link = "@type.qualifier" },
+    ["@variable.builtin"]    = { link = "@type.qualifier" },
+    -- treesitter for markdown (treesitter.lua)
     FencedCodeBlock          = { ctermbg = c.bg_secondary },
     BlockQuote               = { link = 'FencedCodeBlock' },
     ["@code.inline"]         = { ctermbg = c.bg_secondary },
@@ -239,7 +243,7 @@ function M.setup(opts)
     ["@text.strong"]         = { cterm = { bold = true } },
     ["@text.inline_link"]    = { ctermfg = c.blue },
     ["@text.todo.checked"]   = { ctermfg = c.secondary },
-    ["@text.todo.unchecked"] = { ctermfg = c.secondary },
+    ["@text.todo.unchecked"] = { link = "@text.todo.checked" },
   }
 
   if opts and opts.highlights then
