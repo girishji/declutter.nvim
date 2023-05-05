@@ -135,7 +135,12 @@ function M.setup(opts)
     --  Operator	"sizeof", "+", "*", etc.
     --  Keyword	        any other keyword (class, return, etc.)
     --  Exception	try, catch, throw
-    Statement                = { ctermfg = 'NONE' },
+    -- Statement                = { ctermfg = 'NONE' },
+    Conditional              = { ctermfg = 'NONE', cterm = { italic = true } },
+    Repeat                   = { ctermfg = 'NONE', cterm = { italic = true } },
+    Label                    = { ctermfg = 'NONE', cterm = { italic = true } },
+    Keyword                  = { ctermfg = 'NONE', cterm = { italic = true } },
+    Exception                = { ctermfg = 'NONE', cterm = { italic = true } },
     Operator                 = { link = 'Delimiter' },
     --
     -- *PreProc	generic Preprocessor
@@ -235,10 +240,10 @@ function M.setup(opts)
     User8                    = { ctermbg = c.br_bg, ctermfg = c.yellow },
     User9                    = { ctermbg = c.br_bg, ctermfg = c.blue },
     -- Treesitter
-    ["@type.qualifier"]      = { ctermfg = 'NONE', cterm = { italic = true } },
-    ["@type.builtin"]        = { link = "@type.qualifier" },
-    ["@keyword.return"]      = { link = "@type.qualifier" },
-    ["@variable.builtin"]    = { link = "@type.qualifier" },
+    -- ["@type.qualifier"]      = { ctermfg = 'NONE', cterm = { italic = true } },
+    -- ["@type.builtin"]        = { link = "@type.qualifier" },
+    -- ["@keyword.return"]      = { link = "@type.qualifier" },
+    -- ["@variable.builtin"]    = { link = "@type.qualifier" },
     -- treesitter for markdown (treesitter.lua)
     FencedCodeBlock          = { ctermbg = c.br_bg },
     BlockQuote               = { link = 'FencedCodeBlock' },
