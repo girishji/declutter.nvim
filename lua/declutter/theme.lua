@@ -103,7 +103,8 @@ function M.setup(opts)
     -- Generic syntax
     -- https://vimdoc.sourceforge.net/htmldoc/syntax.html
     --    *Comment	any comment
-    Comment                  = { ctermfg = c.br_cyan, cterm = { italic = true } },
+    -- Comment                  = { ctermfg = c.br_cyan, cterm = { italic = true } },
+    Comment                  = { ctermfg = c.br_cyan, cterm = {} },
     --
     -- *Constant	any constant
     --  String		a string constant: "this is a string"
