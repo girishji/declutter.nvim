@@ -182,7 +182,8 @@ function M.setup(opts)
     ["@text.danger"]         = { ctermfg = c.yellow, cterm = { underline = true } },
     ["@text.uri"]            = { ctermfg = c.green },
     -- for vim help files
-    ["@text.literal"]        = { ctermbg = c.br_bg },
+    -- ["@text.literal"]        = { ctermfg = 'NONE' },
+    ["@text.literal"]        = { ctermfg = c.fg },
     ["@text.reference"]      = { ctermfg = c.magenta },
     ["@label"]               = { ctermfg = c.green },
     ["@conceal"]             = { link = 'Conceal' },

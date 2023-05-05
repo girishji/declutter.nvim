@@ -23,7 +23,7 @@ end
 function M.run()
   local theme = require('declutter.theme').setup(M.options)
   load(theme)
-  require('declutter.treesitter').markdown_hl_fenced_code_block()
+  -- require('declutter.treesitter').markdown_hl_fenced_code_block()
 end
 
 local comments_in_bright_color = true
