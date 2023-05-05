@@ -15,6 +15,8 @@ M.markdown_hl_fenced_code_block = function()
       (fenced_code_block
         (code_fence_content) @code_block)
       (block_quote) @block_quote
+      (codeblock
+        (code) @code_block)
       ]])
     local parser = vim.treesitter.get_parser(bufnr, 'markdown')
     local tree = parser:parse()
