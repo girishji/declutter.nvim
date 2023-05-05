@@ -44,7 +44,7 @@ M.markdown_hl_fenced_code_block = function()
   local group = vim.api.nvim_create_augroup("EmphasizedRegion", {})
   vim.api.nvim_create_autocmd({ "InsertLeave", "BufEnter", "BufWritePost" }, {
     group = group,
-    pattern = "*.md",
+    pattern = { "markdown", "help" },
     callback = set_sign_hl,
   })
 end
