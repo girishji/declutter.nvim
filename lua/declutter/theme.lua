@@ -136,11 +136,11 @@ function M.setup(opts)
     --  Keyword	        any other keyword (class, return, etc.)
     --  Exception	try, catch, throw
     -- Statement                = { ctermfg = 'NONE' },
-    Conditional              = { ctermfg = 'NONE', cterm = { italic = true } },
-    Repeat                   = { ctermfg = 'NONE', cterm = { italic = true } },
-    Label                    = { ctermfg = 'NONE', cterm = { italic = true } },
-    Keyword                  = { ctermfg = 'NONE', cterm = { italic = true } },
-    Exception                = { ctermfg = 'NONE', cterm = { italic = true } },
+    Conditional              = { ctermfg = c.cyan, cterm = { italic = true } },
+    Repeat                   = { ctermfg = c.cyan, cterm = { italic = true } },
+    Label                    = { ctermfg = c.cyan, cterm = { italic = true } },
+    Keyword                  = { ctermfg = c.cyan, cterm = { italic = true } },
+    Exception                = { ctermfg = c.cyan, cterm = { italic = true } },
     Operator                 = { link = 'Delimiter' },
     --
     -- *PreProc	generic Preprocessor
