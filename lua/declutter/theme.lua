@@ -41,7 +41,7 @@ end
 
 function M.setup(opts)
   local c = M.get_colors()
-
+  -- local background = vim.o.background
   local highlights = {
     -- VIM UI
     -- https://vimdoc.sourceforge.net/htmldoc/syntax.html
@@ -49,7 +49,7 @@ function M.setup(opts)
     -- Normal = for Normal mindowns, NormalNC = for non current windows
     -- Cursor                   = { ctermbg = c.yellow },
     CursorLine               = { ctermbg = c.br_bg, cterm = {} },
-    CursorLineNr             = { ctermbg = c.br_bg, ctermfg = c.br_magenta, cterm = {} },
+    CursorLineNr             = { ctermbg = c.br_bg, ctermfg = c.green, cterm = {} },
     -- MatchParen             = { ctermbg = c.bg },
     -- ColorColumn            = { ctermbg = c.bg },
     SpellBad                 = { ctermbg = c.br_red, cterm = { underline = true } },
@@ -68,6 +68,7 @@ function M.setup(opts)
     -- Folded                 = { ctermfg = c.primary, cterm = { bold = true } },
     -- Conceal                = { ctermfg = c.primary },
     Directory                = { ctermfg = c.blue },
+    -- Title                = { ctermfg = background == 'light' and c.green or c.yellow, cterm = {bold=true} },
     Title                    = { ctermfg = c.yellow, cterm = { bold = true } },
     ErrorMsg                 = { link = 'DiffDelete' }, -- error messages on the command line
     WarningMsg               = { link = 'DiffChange' },
@@ -97,8 +98,8 @@ function M.setup(opts)
     --
     Pmenu                    = { link = 'NormalFloat' },
     PmenuSel                 = { link = 'Visual' },
-    PmenuSBar                = { link = 'Visual' }, -- scrollbar
-    PmenuThumb               = { ctermbg = c.fg },  -- thumb of scrollbar
+    PmenuSBar                = { link = 'Visual' },   -- scrollbar
+    PmenuThumb               = { ctermbg = c.br_fg }, -- thumb of scrollbar
     --
     -- Generic syntax
     -- https://vimdoc.sourceforge.net/htmldoc/syntax.html
@@ -161,6 +162,7 @@ function M.setup(opts)
     --  SpecialComment	special things inside a comment
     --  Debug		debugging statements
     Special                  = { ctermfg = 'NONE' },
+    -- Delimiter                = { ctermfg = background == 'light' and c.green or c.yellow, cterm = {} }, -- operator symbols
     Delimiter                = { ctermfg = c.yellow, cterm = {} }, -- operator symbols
     --
     -- *Underlined	text that stands out, HTML links
@@ -180,7 +182,10 @@ function M.setup(opts)
     -- ["@type.qualifier"]      = { link = 'PreProc' },
     ["@text.danger"]         = { ctermfg = c.yellow, cterm = { underline = true } },
     ["@text.uri"]            = { ctermfg = c.green },
-    ["@text.literal"]        = { link = 'NONE' },
+    -- for vim help files
+    ["@text.literal"]        = { ctermbg = c.br_bg },
+    ["@text.reference"]      = { ctermfg = c.magenta },
+    ["@label"]               = { ctermfg = c.green },
     --
 
     -- Diagnostic
@@ -201,7 +206,7 @@ function M.setup(opts)
     --
 
     -- indent-blankline
-    IndentBlanklineIndent1   = { ctermfg = c.fg, cterm = { nocombine = true } },
+    IndentBlanklineIndent1   = { ctermfg = c.br_fg, cterm = { nocombine = true } },
     IndentBlanklineIndent2   = { link = 'IndentBlanklineIndent1' },
     IndentBlanklineIndent3   = { link = 'IndentBlanklineIndent1' },
     IndentBlanklineIndent4   = { link = 'IndentBlanklineIndent1' },
@@ -238,10 +243,11 @@ function M.setup(opts)
     FencedCodeBlock          = { ctermbg = c.br_bg },
     BlockQuote               = { link = 'FencedCodeBlock' },
     ["@code.inline"]         = { ctermbg = c.br_bg },
-    ["@deemphasize"]         = { ctermfg = c.fg },
+    ["@deemphasize"]         = { ctermfg = c.br_fg },
     ["@text.emphasis"]       = { cterm = { italic = true } },
     ["@text.strong"]         = { cterm = { bold = true } },
     ["@text.inline_link"]    = { ctermfg = c.blue },
+    ["@text.note"]           = { ctermbg = c.br_red, cterm = { italic = true } },
     ["@text.todo.checked"]   = { ctermfg = c.cyan },
     ["@text.todo.unchecked"] = { link = "@text.todo.checked" },
   }
