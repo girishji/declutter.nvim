@@ -185,6 +185,7 @@ function M.setup(opts)
     ["@text.literal"]        = { ctermbg = c.br_bg },
     ["@text.reference"]      = { ctermfg = c.magenta },
     ["@label"]               = { ctermfg = c.green },
+    ["@conceal"]             = { link = 'Conceal' },
     --
 
     -- Diagnostic
@@ -242,7 +243,6 @@ function M.setup(opts)
     FencedCodeBlock          = { ctermbg = c.br_bg },
     BlockQuote               = { link = 'FencedCodeBlock' },
     ["@code.inline"]         = { ctermbg = c.br_bg },
-    ["@deemphasize"]         = { link = 'Conceal' },
     ["@text.emphasis"]       = { cterm = { italic = true } },
     ["@text.strong"]         = { cterm = { bold = true } },
     ["@text.inline_link"]    = { ctermfg = c.blue },

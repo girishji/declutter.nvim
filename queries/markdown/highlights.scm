@@ -1,9 +1,9 @@
 ;; extends
 
 (fenced_code_block
-  (info_string) @deemphasize)
+  (info_string) @conceal)
 
-(fenced_code_block_delimiter) @deemphasize
+(fenced_code_block_delimiter) @conceal
 
 [
   (atx_h1_marker)
@@ -13,7 +13,7 @@
   (atx_h5_marker)
   (atx_h6_marker)
   (block_quote_marker)
-] @deemphasize
+] @conceal
 
 ; FIXME: Do not conceal list item markers (-, +, *). Some bug causes coceal to
 ; eat up the space after marker.
@@ -67,4 +67,4 @@
 ; block quote
 ; FIXME: parser is buggy. Second line with '>' is missing block_quote_marker
 ; (block_quote
-;   (block_quote_marker) @deemphasize (#set! conceal "┃"))
+;   (block_quote_marker) @conceal (#set! conceal "┃"))

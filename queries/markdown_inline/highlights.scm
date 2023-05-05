@@ -5,6 +5,6 @@
 [
   (code_span_delimiter)
   (emphasis_delimiter)
-]  @deemphasize
+]  @conceal
 
 (inline_link (link_text) @text.inline_link)
