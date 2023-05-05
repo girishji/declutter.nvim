@@ -135,7 +135,7 @@ function M.setup(opts)
     --  Operator	"sizeof", "+", "*", etc.
     --  Keyword	        any other keyword (class, return, etc.)
     --  Exception	try, catch, throw
-    -- Statement                = { ctermfg = 'NONE' },
+    Statement                = { ctermfg = 'NONE' },
     Operator                 = { link = 'Delimiter' },
     --
     -- *PreProc	generic Preprocessor
