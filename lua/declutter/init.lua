@@ -1,6 +1,7 @@
 local M = {}
 
 M.options = {
+  theme = 'default'
 }
 
 function M.setup(opts)

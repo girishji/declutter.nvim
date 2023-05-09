@@ -13,6 +13,7 @@
 
 local M = {}
 
+------------------------------------------------------------
 M.get_colors = function()
   local background = vim.o.background
   return {
@@ -39,7 +40,8 @@ M.get_colors = function()
   }
 end
 
-function M.setup(opts)
+------------------------------------------------------------
+local function get_common_highlights()
   local c = M.get_colors()
   -- local background = vim.o.background
   local highlights = {
@@ -47,26 +49,12 @@ function M.setup(opts)
     -- https://vimdoc.sourceforge.net/htmldoc/syntax.html
     -- By not setting Normal and NormalNC we get bg and fg set by Terminal, including transparent bg.
     -- Normal = for Normal mindowns, NormalNC = for non current windows
-    -- Cursor                   = { ctermbg = c.yellow },
-    CursorLine               = { ctermbg = c.br_bg, cterm = {} },
-    CursorLineNr             = { ctermbg = c.br_bg, ctermfg = c.green, cterm = {} },
+    --
     -- MatchParen             = { ctermbg = c.bg },
     -- ColorColumn            = { ctermbg = c.bg },
-    SpellBad                 = { ctermbg = c.br_red, cterm = { underline = true } },
-    SpellCap                 = { ctermbg = c.br_green, cterm = { underline = true } },
-    SpellRare                = { ctermbg = c.br_yellow, cterm = { underline = true } },
-    SpellLocal               = { ctermbg = c.br_blue, cterm = { underline = true } },
-    -- NonText                  = { ctermfg = c.br_fg }, -- some text in :nmap
-    LineNr                   = { ctermfg = c.br_blue },
-    Visual                   = { ctermbg = c.bg },
-    IncSearch                = { cterm = { reverse = true } },
-    Search                   = { ctermfg = 'NONE', ctermbg = c.br_yellow },
-    StatusLine               = { ctermbg = c.br_bg },
-    StatusLineNC             = { ctermbg = 'NONE' },
-    TabLine                  = { link = 'StatusLine' },
-    TabLineSel               = { link = 'StatusLine' },
+    -- TabLine                  = { link = 'StatusLine' },
+    -- TabLineSel               = { link = 'StatusLine' },
     -- Folded                 = { ctermfg = c.primary, cterm = { bold = true } },
-    Conceal                  = { ctermfg = c.br_fg },
     Directory                = { ctermfg = c.blue },
     Title                    = { ctermfg = c.yellow, cterm = { bold = true } },
     ErrorMsg                 = { link = 'DiffDelete' }, -- error messages on the command line
@@ -80,12 +68,6 @@ function M.setup(opts)
     Question                 = { link = 'MoreMsg' },
     TabLineFill              = { link = 'StatusLineNC' },
     SpecialKey               = { link = 'NonText' },
-    --
-    -- nvim -d (vimdiff)
-    DiffAdd                  = { ctermbg = c.br_green },
-    DiffChange               = { ctermbg = c.br_yellow },
-    DiffDelete               = { ctermbg = c.br_red },
-    DiffText                 = { ctermbg = c.br_magenta },
     --
     -- Floating Windows
     FloatBorder              = { ctermfg = 'NONE', ctermbg = 'NONE' },
@@ -173,9 +155,6 @@ function M.setup(opts)
     -- *Error		any erroneous construct
     Error                    = { link = 'ErrorMsg' },
     --
-    -- *Todo		anything that needs extra attention; mostly the
-    Todo                     = { ctermfg = 'NONE', ctermbg = c.br_red, cterm = { underline = true } },
-    --
 
     -- Set specific Treesitter node tags
     -- ["@type.qualifier"]      = { link = 'PreProc' },
@@ -193,7 +172,7 @@ function M.setup(opts)
     DiagnosticError          = { link = 'Error' },
     DiagnosticWarn           = { link = 'WarningMsg' },
     DiagnosticInfo           = { link = 'DiffText' },
-    DiagnosticHint           = { ctermbg = c.br_green, ctermfg = 'NONE' },
+    DiagnosticHint           = { link = 'DiffAdd' },
     DiagnosticSignError      = { ctermbg = 'NONE', ctermfg = c.red },
     DiagnosticSignWarn       = { ctermbg = 'NONE', ctermfg = c.yellow },
     DiagnosticSignInfo       = { ctermbg = 'NONE', ctermfg = c.blue },
@@ -240,6 +219,7 @@ function M.setup(opts)
     -- ["@type.builtin"]        = { link = "@type.qualifier" },
     -- ["@keyword.return"]      = { link = "@type.qualifier" },
     -- ["@variable.builtin"]    = { link = "@type.qualifier" },
+    --
     -- treesitter for markdown (treesitter.lua)
     FencedCodeBlock          = { ctermbg = c.br_bg },
     BlockQuote               = { link = 'FencedCodeBlock' },
@@ -247,10 +227,82 @@ function M.setup(opts)
     ["@text.emphasis"]       = { cterm = { italic = true } },
     ["@text.strong"]         = { cterm = { bold = true } },
     ["@text.inline_link"]    = { ctermfg = c.blue },
-    ["@text.note"]           = { ctermbg = c.br_red, cterm = { italic = true } },
     ["@text.todo.checked"]   = { ctermfg = c.cyan },
     ["@text.todo.unchecked"] = { link = "@text.todo.checked" },
   }
+
+  return highlights
+end
+
+------------------------------------------------------------
+local function get_default_highlights()
+  local c = M.get_colors()
+  local highlights = {
+    -- Cursor                   = { ctermbg = c.yellow },
+    CursorLine     = { ctermbg = c.br_bg, cterm = {} },
+    CursorLineNr   = { ctermbg = c.br_bg, ctermfg = c.green, cterm = {} },
+    SpellBad       = { ctermbg = c.br_red, cterm = { underline = true } },
+    SpellCap       = { ctermbg = c.br_green, cterm = { underline = true } },
+    SpellRare      = { ctermbg = c.br_yellow, cterm = { underline = true } },
+    SpellLocal     = { ctermbg = c.br_blue, cterm = { underline = true } },
+    -- NonText                  = { ctermfg = c.br_fg }, -- some text in :nmap
+    LineNr         = { ctermfg = c.br_blue },
+    Visual         = { ctermbg = c.bg },
+    IncSearch      = { cterm = { reverse = true } },
+    Search         = { ctermfg = 'NONE', ctermbg = c.br_yellow },
+    StatusLine     = { ctermbg = c.br_bg },
+    StatusLineNC   = { ctermbg = 'NONE' },
+    Conceal        = { ctermfg = c.br_fg },
+    -- nvim -d (vimdiff)
+    DiffAdd        = { ctermbg = c.br_green },
+    DiffChange     = { ctermbg = c.br_yellow },
+    DiffDelete     = { ctermbg = c.br_red },
+    DiffText       = { ctermbg = c.br_magenta },
+    -- *Todo		anything that needs extra attention; mostly the
+    Todo           = { ctermfg = 'NONE', ctermbg = c.br_red, cterm = { underline = true } },
+    --
+    -- treesitter markdown
+    ["@text.note"] = { ctermbg = c.br_red, cterm = { italic = true } },
+  }
+  return vim.tbl_deep_extend('force', highlights, get_common_highlights())
+end
+
+------------------------------------------------------------
+local function get_minimal_highlights()
+  local c = M.get_colors()
+  local highlights = {
+    -- Cursor                   = { ctermbg = c.yellow },
+    CursorLine     = { ctermbg = c.br_bg, cterm = {} },
+    CursorLineNr   = { ctermbg = c.br_bg, ctermfg = c.green, cterm = {} },
+    SpellBad       = { ctermfg = c.red, cterm = { underline = true } },
+    SpellCap       = { ctermfg = c.green, cterm = { underline = true } },
+    SpellRare      = { ctermfg = c.yellow, cterm = { underline = true } },
+    SpellLocal     = { ctermfg = c.blue, cterm = { underline = true } },
+    -- NonText                  = { ctermfg = c.br_fg }, -- some text in :nmap
+    LineNr         = { ctermfg = c.br_blue },
+    -- Visual         = { ctermbg = c.bg },
+    -- IncSearch      = { cterm = { reverse = true } },
+    -- Search         = { ctermfg = 'NONE', ctermbg = c.br_yellow },
+    StatusLine     = { ctermbg = c.br_bg },
+    StatusLineNC   = { ctermbg = 'NONE' },
+    Conceal        = { ctermfg = c.br_fg },
+    -- nvim -d (vimdiff)
+    DiffAdd        = { ctermfg = c.green, cterm = { underline = true } },
+    DiffChange     = { ctermfg = c.yellow, cterm = { underline = true } },
+    DiffDelete     = { ctermfg = c.red, cterm = { underline = true } },
+    DiffText       = { ctermfg = c.magenta, cterm = { underline = true } },
+    -- *Todo		anything that needs extra attention; mostly the
+    Todo           = { ctermfg = c.red, ctermbg = 'NONE', cterm = { underline = true } },
+    --
+    -- treesitter markdown
+    ["@text.note"] = { ctermfg = c.red, cterm = { italic = true } },
+  }
+  return vim.tbl_deep_extend('force', highlights, get_common_highlights())
+end
+
+------------------------------------------------------------
+function M.setup(opts)
+  local highlights = opts.theme == 'minimal' and get_minimal_highlights() or get_default_highlights()
 
   if opts and opts.highlights then
     highlights = vim.tbl_deep_extend('force', highlights, opts.highlights)
@@ -259,4 +311,5 @@ function M.setup(opts)
   return highlights
 end
 
+------------------------------------------------------------
 return M
