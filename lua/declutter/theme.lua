@@ -17,8 +17,8 @@ local M = {}
 M.get_colors = function()
   local background = vim.o.background
   return {
-    bg = background == 'light' and 7 or 0,
-    br_bg = background == 'light' and 15 or 8,
+    bg = background == 'light' and 15 or 8,
+    br_bg = background == 'light' and 7 or 0,
     fg = background == 'light' and 0 or 7,
     br_fg = background == 'light' and 8 or 15,
     black = 0,
